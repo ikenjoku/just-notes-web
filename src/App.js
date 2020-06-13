@@ -1,12 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Pages from './pages'
+import { CreateGlobalStyle } from './components'
 
 function App () {
 
   return (
     <div>
-      <h1>Just-Notes</h1>
-      <p>Welcome to the Just-Note application</p>
+      <CreateGlobalStyle />
+      <Pages />
     </div>
   )
 }
