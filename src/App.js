@@ -1,13 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
+import Pages from './pages'
+import { CreateGlobalStyle } from './components'
+
+const uri = process.env.API_URI
+const cache = new InMemoryCache()
+const client = new ApolloClient({
+  uri,
+  cache,
+  connectToDevTools: true
+})
 
 function App () {
 
   return (
-    <div>
-      <h1>Just-Notes</h1>
-      <p>Welcome to the Just-Note application</p>
-    </div>
+    <ApolloProvider client={client}>
+      <CreateGlobalStyle />
+      <Pages />
+    </ApolloProvider>
   )
 }
 
