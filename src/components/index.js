@@ -3,6 +3,8 @@ export {  default as Layout } from './Layout'
 export {  default as Navigation } from './Navigation'
 export {  default as Note } from './Note'
 export {  default as NoteFeed } from './NoteFeed'
+export { default as UserForm } from './UserForm'
 
 export { Button } from './Button'
+export { default as ButtonAsLink } from './ButtonAsLink'
 export { default as CreateGlobalStyle } from './GlobalStyle'
