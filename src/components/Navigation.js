@@ -7,6 +7,14 @@ export default function Navigation() {
     <Nav>
       <NavList>
         <li>
+          <Link to="/new">
+            <span aria-hidden="true" role="img">
+              ➕
+            </span>
+            New Note
+          </Link>
+        </li>
+        <li>
           <Link to="/">
             <span aria-hidden="true" role="img">
               🏠
