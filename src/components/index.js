@@ -4,6 +4,7 @@ export {  default as Navigation } from './Navigation'
 export {  default as Note } from './Note'
 export {  default as NoteFeed } from './NoteFeed'
 export { default as UserForm } from './UserForm'
+export { default as NoteForm } from './NoteForm'
 
 export { Button } from './Button'
 export { default as ButtonAsLink } from './ButtonAsLink'
