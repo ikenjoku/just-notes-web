@@ -5,6 +5,8 @@ export {  default as Note } from './Note'
 export {  default as NoteFeed } from './NoteFeed'
 export { default as UserForm } from './UserForm'
 export { default as NoteForm } from './NoteForm'
+export { default as NoteUser } from './NoteUser'
+export { default as DeleteNote } from './DeleteNote'
 
 export { Button } from './Button'
 export { default as ButtonAsLink } from './ButtonAsLink'

@@ -1,15 +1,10 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { useQuery, gql, from } from '@apollo/client'
+import { useQuery } from '@apollo/client'
 import styled from 'styled-components'
 import logo from '../img/logo.svg'
 import { ButtonAsLink } from '../components'
-
-const IS_LOGGED_IN = gql`
-  {
-    isLoggedIn @client
-  }
-`
+import { IS_LOGGED_IN } from '../gql/query'
 
 export default function Header() {
   const history = useHistory()
