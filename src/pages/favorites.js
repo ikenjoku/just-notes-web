@@ -14,7 +14,7 @@ function Favorites () {
   if (error) return <p>Error fetching favorites...</p>
 
   if (data.me.favorites.length > 0) {
-    return <NoteFeed notes={data.me.notes} />
+    return <NoteFeed notes={data.me.favorites} />
   } else {
     return <p>You have no favorites yet...</p>
   }

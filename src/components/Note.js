@@ -1,8 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import ReactMarkdown from 'react-markdown'
 import { format } from 'date-fns'
 import styled from 'styled-components'
+import ReactMarkdown from 'react-markdown'
+import { useQuery } from '@apollo/client'
+import { IS_LOGGED_IN } from '../gql/query'
+import { NoteUser } from '../components'
 
 const StyledNote = styled.article`
   max-width: 800px;
@@ -23,12 +25,12 @@ const UserActions = styled.div`
   margin-left: auto;
 `
 
-const UnstyledLink = styled(Link)`
-  text-decoration: none;
-  pointer: cursor;
-`
-
 const Note = ({ note }) => {
+  const { data, error, loading } = useQuery(IS_LOGGED_IN)
+
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error fetching user...</p>
+
   return (
     <StyledNote>
       <MetaData>
@@ -44,12 +46,11 @@ const Note = ({ note }) => {
           {format(note.createdAt, 'MMM Do YYYY hh:mm:ss')}
         </MetaInfo>
         <UserActions>
-          <em>Favorites:</em> {note.favoriteCount}
+          { data.isLoggedIn &&  <NoteUser note ={note} /> }
+          <div><em>Favorites:</em> {note.favoriteCount}</div>
         </UserActions>
       </MetaData>
-      {/* <UnstyledLink to={`/note/${note.id}`}> */}
         <ReactMarkdown source={note.content} />
-      {/* </UnstyledLink> */}
     </StyledNote>
   );
 };
