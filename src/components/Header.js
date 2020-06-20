@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import styled from 'styled-components'
-import logo from '../img/logo.svg'
+import logo from '../img/paper.svg'
 import { ButtonAsLink } from '../components'
 import { IS_LOGGED_IN } from '../gql/query'
 
