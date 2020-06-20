@@ -1,12 +1,7 @@
 import React, { useEffect, Fragment } from 'react';
 import { useMutation, gql, useApolloClient } from '@apollo/client'
+import { SIGNUP_USER } from '../gql/mutation'
 import { UserForm } from '../components'
-
-const SIGNUP_USER = gql`
-  mutation signUp($email: String!, $username: String!, $password: String!) {
-    signUp(email: $email, username: $username, password: $password)
-  }
-`
 
 const SignUp = ({ history }) => {
 

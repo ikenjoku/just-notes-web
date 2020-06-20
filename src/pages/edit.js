@@ -2,25 +2,7 @@ import React, { Fragment } from 'react'
 import { useMutation, gql, useQuery } from '@apollo/client'
 import { NoteForm } from '../components'
 import { GET_NOTE, GET_ME } from '../gql/query'
-
-const UPDATE_NOTE = gql`
-  mutation updateNote ($content: String!, $id: ID!){
-    updateNote (content: $content, id: $id){
-      id
-      content
-      createdAt
-      favoriteCount
-      favoritedBy {
-        id
-        username
-      }
-      author {
-        username
-        id
-      }
-    }
-  }
-`
+import { UPDATE_NOTE } from '../gql/mutation'
 
 export default function UpdateNote({ match, history }) {
   const noteId = match.params.id
